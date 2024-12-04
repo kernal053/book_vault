@@ -57,8 +57,8 @@ group :test do
 end
 
 gem "devise", "~> 4.9"
-gem 'carrierwave', '~> 3.0'
+gem "carrierwave", "~> 3.0"
 
-gem 'bootstrap', '~> 5.3.3'
+gem "bootstrap", "~> 5.3.3"
 
-gem 'dartsass-sprockets'
+gem "dartsass-sprockets"
