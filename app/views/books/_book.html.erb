@@ -1,0 +1,27 @@
+<div id="<%= dom_id book %>" class="card mb-4">
+  <div class="row g-0">
+    <div class="col-md-4">
+      <% if book.cover_image.present? %>
+        <%= image_tag book.cover_image.url, class: "img-fluid rounded-start", alt: book.title %>
+      <% else %>
+        <%= image_tag "placeholder.jpg", class: "img-fluid rounded-start", alt: "No cover image available" %>
+      <% end %>
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title"><%= book.title %></h5>
+        <h6 class="card-subtitle text-muted mb-3">By <%= book.author %></h6>
+
+        <p class="card-text">
+          <strong>Description:</strong>
+          <%= book.description %>
+        </p>
+
+        <p class="card-text">
+          <strong>Published Date:</strong>
+          <%= book.published_date %>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
