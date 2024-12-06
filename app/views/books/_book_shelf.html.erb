@@ -1,0 +1,14 @@
+<div id="<%= dom_id book %>"class="col">
+  <div class="card h-100">
+    <% if book.cover_image.present? %>
+      <%= image_tag book.cover_image.url, class: "img-fluid rounded-start", alt: book.title %>
+    <% else %>
+      <%= image_tag "placeholder.jpg", class: "img-fluid rounded-start", alt: "No cover image available" %>
+    <% end %>
+    <div class="card-body d-flex flex-column">
+      <h5 class="card-title mb-2"><%= book.title %></h5>
+        <p class="card-subtitle text-muted mb-3">By <%= book.author %></p>
+      <%= link_to "Show", book, class: "btn btn-primary mt-auto" %>
+    </div>
+  </div>
+</div>

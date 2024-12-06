@@ -21,8 +21,10 @@ class BooksController < ApplicationController
 
     respond_to do |format|
       if @book.save
+        format.turbo_stream { render turbo_stream: turbo_stream.append('books', partial: 'books/book_shelf', locals: {book: @book}) }
         format.html { redirect_to @book, notice: "Book was successfully created." }
       else
+        format.turbo_stream { render :new, status: :unprocessable_entity }
         format.html { render :new, status: :unprocessable_entity }
       end
     end
@@ -33,6 +35,7 @@ class BooksController < ApplicationController
       if @book.update(book_params)
         format.html { redirect_to @book, notice: "Book was successfully updated." }
       else
+        format.turbo_stream { render :edit, status: :unprocessable_entity }
         format.html { render :edit, status: :unprocessable_entity }
       end
     end

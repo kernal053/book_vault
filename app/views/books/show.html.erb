@@ -4,7 +4,7 @@
 
 <div>
   <div>
-    <%= link_to "Edit this book", edit_book_path(@book), class: "btn btn-primary mt-auto"%> |
+    <%= link_to "Edit this book", edit_book_path(@book), "data-controller": "turbo", class: "btn btn-primary mt-auto"%> |
     <%= link_to "Back to books", books_path, class: "btn btn-primary mt-auto"%>
   </div>
 
